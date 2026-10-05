@@ -1,0 +1,6 @@
+{
+  "name": "@wely/config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Configurări partajate (ESLint, Prettier etc.). ESLint vine în pasul 2, odată cu regulile pentru tokens."
+}

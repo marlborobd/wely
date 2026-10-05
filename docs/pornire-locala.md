@@ -27,7 +27,7 @@ rapidă cale pentru ecrane, temă și texte.
 Expo Go nu e potrivit pentru harta Google cu cheia noastră. Pe Android, un development build se
 face local, gratuit, fără cont Apple/Google Play:
 
-1. Instalează JDK 17 (cerința exactă pentru SDK 57: de verificat în documentația Expo).
+1. Instalează JDK 17 (verificat în sursele React Native 0.86: `jvmToolchain(17)`). Din Android Studio → SDK Manager instalează: Android SDK Platform 36, Build-Tools 36.0.0, NDK 27.1.12297006 (valori din `react-native/gradle/libs.versions.toml`; `minSdk` = 24, deci telefoane cu Android 7.0+).
 2. `pnpm --filter @wely/mobile exec expo run:android` (generează `android/`, ignorat de git).
 
 Vom introduce asta când ajungem la hartă (pasul 5), nu înainte.

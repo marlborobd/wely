@@ -20,7 +20,7 @@ Primul pas de aplicație mobilă: schelet Expo care pornește pe iPhone, cu tem�
   încărcarea eșuează, aplicația pornește cu fontul sistemului (nu se blochează).
 - **i18n:** pachetul `@wely/i18n` (i18next 26.4.2 + react-i18next 17.0.15). Română implicită,
   engleză secundară. Chei tipizate (cheie inexistentă = eroare la compilare), inițializare
-  sincronă, resurse incluse în aplicație (funcționează offline). Limbă nesuportată → română.
+  sincronă, resurse incluse în aplicație (funcționează offline). Limba dispozitivului: română → română; orice altă limbă → engleză (decizia proprietarului). Română rămâne limba implicită pentru texte lipsă.
   Teste: paritate chei ro/en, fără ș/ț cu sedilă, texte aprobate.
 - **Iconițe:** Phosphor (`phosphor-react-native`), set unic. `regular` în liste, `bold` în
   butoane și tile-uri, `fill` pentru tab activ. Se instalează la pasul 3B.

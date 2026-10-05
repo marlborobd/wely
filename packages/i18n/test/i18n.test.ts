@@ -54,8 +54,8 @@ describe('resolveLanguage', () => {
     expect(resolveLanguage(code)).toBe(expected);
   });
 
-  it.each([null, undefined, '', 'de', 'fr-FR'])('%s → default (Romanian)', (code) => {
-    expect(resolveLanguage(code)).toBe(defaultLanguage);
+  it.each([null, undefined, '', 'de', 'fr-FR'])('%s → English (unsupported device language)', (code) => {
+    expect(resolveLanguage(code)).toBe('en');
     expect(defaultLanguage).toBe('ro');
   });
 });

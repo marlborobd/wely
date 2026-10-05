@@ -14,8 +14,25 @@ export const ro = {
     activity: 'Activitate',
     profile: 'Profil',
   },
+  common: {
+    comingSoon: 'În curând',
+    comingSoonMessage: 'Lucrăm la această secțiune.',
+  },
   home: {
+    title: 'Să mergem peste tot.',
     searchPlaceholder: 'Încotro?',
+    cards: {
+      routes: { title: 'Rute', subtitle: 'Transport public' },
+      taxi: { title: 'Taxi', subtitle: 'Comandă rapid' },
+      discover: { title: 'Discover', subtitle: 'Explorează orașul' },
+      civic: { title: 'Civic', subtitle: 'Raportează' },
+    },
+    recent: {
+      title: 'Recente',
+      home: 'Acasă',
+      work: 'Serviciu',
+      lastAddress: 'Ultima adresă',
+    },
   },
 };
 

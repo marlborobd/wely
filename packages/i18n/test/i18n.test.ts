@@ -54,10 +54,13 @@ describe('resolveLanguage', () => {
     expect(resolveLanguage(code)).toBe(expected);
   });
 
-  it.each([null, undefined, '', 'de', 'fr-FR'])('%s → English (unsupported device language)', (code) => {
-    expect(resolveLanguage(code)).toBe('en');
-    expect(defaultLanguage).toBe('ro');
-  });
+  it.each([null, undefined, '', 'de', 'fr-FR'])(
+    '%s → English (unsupported device language)',
+    (code) => {
+      expect(resolveLanguage(code)).toBe('en');
+      expect(defaultLanguage).toBe('ro');
+    },
+  );
 });
 
 describe('createI18n', () => {

@@ -48,14 +48,21 @@ core – it lives in `packages/city-packs/arad`), offline-first, feature flags f
 functionality, clean architecture, stable public contracts, no hardcoded city data.
 
 Pinned: Node 22, pnpm 10.28.0, Turborepo 2.11.7, TypeScript ~6.0.3 (matches the Expo SDK 57
-template). Do not bump TypeScript to 7.x without an ADR.
+template; typescript-eslint also requires <6.1). Do not bump TypeScript to 7.x without an ADR.
+Tooling: ESLint 10.12.0 + typescript-eslint 8.71.0, Vitest 5.0.3 (ADR-0006).
+
+Commands (run from the repo root): `pnpm typecheck` · `pnpm test` · `pnpm lint` ·
+`pnpm format:check`. All four must pass before a commit.
 
 ## Design system rules (see docs/design-system.md)
 
-- No hex colors, magic numbers for style, or hardcoded UI strings in `apps/`.
-  Components use semantic tokens only; dark mode via semantic token mapping.
-- `#55E2DA` is a FILL color only (never text/icon on white). Text on it: `#0F172A`.
-- Small text on light: `primaryText #0F766E`, `successText #047857`, `dangerStrong #E11D48`.
+- No hex colors, magic numbers for style, or hardcoded UI strings in `apps/` or in `@wely/ui`
+  components (enforced by ESLint; only `packages/ui/src/tokens/**` may hold raw values).
+  Components use semantic tokens via `useTheme()`; dark mode via semantic token mapping.
+- `#55E2DA` is a FILL color only (never text/icon on white). Text on it: `#0F172A` (`onPrimary`).
+- Small text on light: `primaryText` (#0F766E), `successText` (#047857), `dangerText` (#D01644).
+  `primaryIcon` (#0D9488) and `danger` (#F43F5E) are for icons/large elements only.
+- Any new color pair must be added to `packages/ui/test/contrast.test.ts` (WCAG AA: 4.5 text, 3 UI).
 - All UI text in Romanian with diacritics via `@wely/i18n` (en is secondary).
 - Every component has all states: default, pressed, disabled, loading, error, empty.
 - Min touch target 44px; respect safe areas; no fixed heights; long text truncates safely.

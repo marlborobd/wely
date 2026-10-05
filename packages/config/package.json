@@ -2,5 +2,21 @@
   "name": "@wely/config",
   "version": "0.0.0",
   "private": true,
-  "description": "Configurări partajate (ESLint, Prettier etc.). ESLint vine în pasul 2, odată cu regulile pentru tokens."
+  "type": "module",
+  "description": "Configurări partajate (ESLint etc.).",
+  "exports": {
+    "./eslint": "./eslint/index.js"
+  },
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@eslint/js": "10.0.1",
+    "typescript-eslint": "8.71.0"
+  },
+  "devDependencies": {
+    "eslint": "10.12.0",
+    "typescript": "~6.0.3",
+    "vitest": "5.0.3"
+  }
 }

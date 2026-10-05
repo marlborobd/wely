@@ -1,3 +1,4 @@
-// @wely/ui – design system: tokens, temă, componente (pasul 2–3).
-// Gol intenționat în pasul 1.
-export {};
+// @wely/ui – design system: tokens, temă, componente.
+export * from './tokens';
+export { createTheme, resolveScheme, type Theme } from './theme/createTheme';
+export { ThemeProvider, useTheme } from './theme/ThemeProvider';

@@ -31,7 +31,9 @@ Text `#0F172A` pe `#55E2DA`: 11,29:1.
 ## Tokeni aditivi aprobați
 
 - `primaryText` `#0F766E` – 5,47:1 pe alb, 5,23:1 pe `#F8FAFC` (etichete mici, linkuri, tab activ)
-- `dangerStrong` `#E11D48` – 4,70:1 cu text alb (SOS, erori mici)
+- `roseDeep` `#D01644` – 5,41:1 pe alb, 5,17:1 pe `#F8FAFC` (text mic de eroare, buton SOS cu text alb).
+  **Înlocuiește `#E11D48`** din propunerea inițială: avea 4,70:1 pe alb, dar doar 4,49:1 pe `#F8FAFC`,
+  sub pragul de 4,5:1 (descoperit la calculul din pasul 2).
 - `successText` `#047857` – 5,48:1 pe alb
 
 ## Dark mode (propus de Claude, aprobat de proprietar)
@@ -40,9 +42,24 @@ Fundal `#0B1220` · suprafață `#131C2E` · text `#F1F5F9` (15,5:1 pe suprafaț
 text secundar `#94A3B8` (6,6:1) · primary `#55E2DA` (10,8:1) · eroare `#FB7185` (6,3:1) ·
 succes `#34D399` (8,9:1). Toate ≥4,5:1 (calculat; neverificat încă pe ecran).
 
-## Rămâne de calculat (pasul 2)
+## Borduri (calculat în pasul 2)
 
-Bordurile câmpurilor de formular au nevoie de ≥3:1. Cardurile folosesc umbră, fără bordură.
+- Câmpuri de formular (≥3:1): light `#7C8CA1` (3,43:1 pe alb, 3,28:1 pe `#F8FAFC`);
+  dark `#64748B` (3,58:1 pe suprafață, 3,93:1 pe fundal).
+- Decorative (fără cerință de contrast): light `#E2E8F0`, dark `#1E293B`. Cardurile folosesc umbră.
+
+## Tokens în cod (`packages/ui`)
+
+- `src/tokens/primitives/` – valori brute (singurul loc cu hex, alături de `semantic/`).
+- `src/tokens/semantic/{light,dark}.ts` – roluri: `background`, `surface`, `textPrimary`,
+  `textSecondary`, `primary`/`onPrimary`, `primaryText`, `primaryIcon`, `danger`, `dangerText`,
+  `sos`/`onSos`, `success`/`onSuccess`/`successText`, `borderDecorative`, `borderInput`.
+  Light și dark au exact aceleași roluri (impus de tip).
+- `createTheme(scheme)`, `resolveScheme(preferință, schemaDispozitiv)`, `ThemeProvider`, `useTheme()`.
+- Teste: contrast WCAG pe toate perechile, paleta înghețată neschimbată, aceleași roluri light/dark.
+- ESLint (`@wely/config/eslint`) blochează în `apps/` și în componente: culori hardcodate,
+  numere magice în stiluri (doar `0` permis), text hardcodat în JSX.
+- Marja la `textSecondary` pe `#F8FAFC` e mică (4,55:1 față de 4,5:1): nu se schimbă fundalul sau culoarea fără recalcul.
 
 ## Alte reguli
 

@@ -65,7 +65,7 @@ export const welyConfig = [
   {
     // Tokens are the only place where raw values live; tests may use anything.
     files: ['apps/**/*.{ts,tsx}', 'packages/ui/src/**/*.{ts,tsx}'],
-    ignores: ['packages/ui/src/tokens/**', '**/*.test.{ts,tsx}'],
+    ignores: ['packages/ui/src/tokens/**', 'apps/api/**', '**/*.test.{ts,tsx}'],
     rules: {
       'no-restricted-syntax': ['error', ...uiRestrictions],
     },

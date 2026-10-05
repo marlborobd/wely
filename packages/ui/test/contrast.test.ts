@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { createTheme, palette, type ColorScheme, type SemanticColors } from '../src';
+import { createTheme } from '../src/theme/createTheme';
+import { palette, type ColorScheme, type SemanticColors } from '../src/tokens';
 import { contrastRatio } from './contrast';
 
 const TEXT = 4.5; // WCAG AA, normal text

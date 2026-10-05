@@ -34,6 +34,7 @@ export const borderWidth = {
 } as const;
 
 export const opacity = {
+  full: 1,
   disabled: 0.4,
   pressed: 0.85,
 } as const;

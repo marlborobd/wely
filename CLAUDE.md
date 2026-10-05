@@ -50,7 +50,8 @@ functionality, clean architecture, stable public contracts, no hardcoded city da
 Pinned: Node 22, pnpm 10.28.0, Turborepo 2.11.7, TypeScript ~6.0.3 (matches the Expo SDK 57
 template; typescript-eslint also requires <6.1). Do not bump TypeScript to 7.x without an ADR.
 Mobile: Expo SDK 57, expo-router, i18next 26 (`@wely/i18n`), Inter fonts, Phosphor icons (ADR-0007).
-Tooling: ESLint 10.12.0 + typescript-eslint 8.71.0, Vitest 5.0.3 (ADR-0006).
+Tooling: ESLint 10.12.0 + typescript-eslint 8.71.0, Vitest 5.0.3 (ADR-0006), Jest 29 + jest-expo +
+RNTL for components (ADR-0008). Icons: import ONLY from `@wely/ui` (registry `icons.ts`), add new ones there.
 
 Commands (run from the repo root): `pnpm typecheck` · `pnpm test` · `pnpm lint` ·
 `pnpm format:check`. All four must pass before a commit.

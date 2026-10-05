@@ -1,15 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import {
-  borderWidth,
-  createTheme,
-  darkColors,
-  lightColors,
-  palette,
-  radius,
-  resolveScheme,
-  size,
-  space,
-} from '../src';
+import { createTheme, resolveScheme } from '../src/theme/createTheme';
+import { borderWidth, darkColors, lightColors, palette, radius, size, space } from '../src/tokens';
 
 const HEX = /^#[0-9A-F]{6}$/i;
 

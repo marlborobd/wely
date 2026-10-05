@@ -64,4 +64,4 @@ succes `#34D399` (8,9:1). Toate ≥4,5:1 (calculat; neverificat încă pe ecran)
 ## Alte reguli
 
 Radius 16–20px · font Inter · țintă minimă 44px · fără culori hex sau texte în cod, doar tokens
-și i18n · iconițe: set unic (propus: Lucide – de confirmat).
+și i18n · iconițe: set unic (Phosphor, confirmat de owner: `regular` în liste, `bold` în butoane și tile-uri, `fill` pentru tab activ; vezi ADR-0007).

@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Wely",
+    "slug": "wely",
+    "scheme": "wely",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F8FAFC",
+          "dark": { "backgroundColor": "#0B1220" }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

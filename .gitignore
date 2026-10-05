@@ -29,3 +29,7 @@ android/
 *.p8
 *.p12
 *.mobileprovision
+
+# Expo generated
+.expo/
+expo-env.d.ts
